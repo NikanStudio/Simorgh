@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سیمرغ | پیام‌رسان</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">🕊️ سیمرغ</div>
+    <button id="logoutBtn" class="logout hidden">خروج</button>
+  </header>
+
+  <main id="authPage" class="auth-page">
+    <div class="auth-card">
+      <div class="logo">🕊️</div>
+      <h1>به سیمرغ خوش آمدی</h1>
+      <p>پیام‌رسان خصوصی تو</p>
+
+      <div class="tabs">
+        <button id="loginTab" class="selected">ورود</button>
+        <button id="signupTab">ثبت‌نام</button>
+      </div>
+
+      <form id="authForm">
+        <label>آیدی</label>
+        <input id="username" placeholder="مثلاً nikan_123" required>
+
+        <label>رمز عبور</label>
+        <input id="password" type="password" placeholder="رمز عبور" required>
+
+        <div id="confirmBox" class="hidden">
+          <label>تکرار رمز عبور</label>
+          <input id="confirmPassword" type="password" placeholder="تکرار رمز">
+        </div>
+
+        <button id="authSubmit" class="main-btn">ورود به سیمرغ</button>
+      </form>
+
+      <p id="authMessage" class="status"></p>
+    </div>
+  </main>
+
+  <main id="messenger" class="messenger hidden">
+
+    <aside class="sidebar">
+
+      <div class="profile-box">
+        <div class="my-avatar" id="myAvatar">س</div>
+        <div>
+          <strong id="myName">کاربر</strong>
+          <small id="myUsername">@username</small>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input id="searchInput" placeholder="جست‌وجو با آیدی">
+        <button id="searchBtn">جست‌وجو</button>
+      </div>
+
+      <div id="searchResults" class="search-results"></div>
+
+      <h3 class="section-title">گفت‌وگوها</h3>
+      <div id="chatList" class="chat-list"></div>
+
+    </aside>
+
+    <section class="chat-panel">
+
+      <div id="emptyChat" class="empty-chat">
+        <div class="empty-icon">🕊️</div>
+        <h2>سیمرغ</h2>
+        <p>برای شروع گفت‌وگو یک حساب را انتخاب کن.</p>
+      </div>
+
+      <div id="activeChat" class="active-chat hidden">
+
+        <div class="chat-header">
+          <div class="chat-avatar" id="partnerAvatar">س</div>
+          <div>
+            <strong id="partnerName">کاربر</strong>
+            <small id="partnerUsername">@username</small>
+          </div>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <form id="sendForm" class="send-form">
+          <input id="messageInput" placeholder="پیامت را بنویس..." autocomplete="off">
+          <button type="submit">ارسال</button>
+        </form>
+
+      </div>
+
+      <div id="chatStatus" class="chat-status"></div>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
